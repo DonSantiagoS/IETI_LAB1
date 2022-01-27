@@ -1,4 +1,4 @@
-package com.example.springboot;
+package co.edu.eci.ieti.laboratorio_1;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

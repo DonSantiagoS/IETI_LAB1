@@ -1,4 +1,4 @@
-package co.edu.eci.laboratorio_1;
+package co.edu.eci.ieti.laboratorio_1;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;

@@ -1,4 +1,4 @@
-package co.edu.eci.laboratorio_1;
+package co.edu.eci.ieti.laboratorio_1;
 
 import org.junit.jupiter.api.Test;
 
