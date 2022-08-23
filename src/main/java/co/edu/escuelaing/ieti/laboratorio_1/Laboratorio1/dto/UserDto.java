@@ -34,7 +34,7 @@ public class UserDto {
     }
 
     public User toEntity(){
-        User user= new User(id, name, lastName, email, createdAt);
+        User user= new User(this.getClass());
         return user;
     }
 

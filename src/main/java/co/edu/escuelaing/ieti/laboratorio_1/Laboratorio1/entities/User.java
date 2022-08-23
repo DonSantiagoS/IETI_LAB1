@@ -21,43 +21,46 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Entity
 public class User {
     @Id
-    @id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+    private Integer Id;
     private String name;
     private String lastName;
     private String email;
     private LocalDateTime createdAt;
 
+
+    public User(){}
+
+    public User(Integer Id, String name, String lastName, String email, LocalDateTime createdAt) {
+        Id=Id;
+        name=name;
+        lastName=lastName;
+        email=email;
+        createdAt=createdAt;
+    }
     public User(UserDto userDto) {
-        id= userDto.getId();
+        Id= userDto.getId();
         name = userDto.getName();
         lastName= userDto.getLastName();
         email= userDto.getEmail();
         createdAt= userDto.getCreatedAt();
     }
 
-    public User() {}
-
     public UserDto toDto(){
-        UserDto userDto= new UserDto(id, name, lastName, email, createdAt);
+        UserDto userDto= new UserDto(Id, name, lastName, email, createdAt);
         return userDto;
     }
 
     public Integer getId() {
-        return null;
+        return Id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Integer id) {
+        this.Id = id;
     }
 
-    public Long getId() {
-        return id;
-    }
 }

@@ -18,7 +18,7 @@ public class UserServiceHashmap implements UserService {
 
     @Override
     public User create(UserDto userDto) {
-        User user= userDto.toEntity();
+        User user= new User(userDto);
         HashMapUsers.put(userDto.getId(),user);
         return user;
     }

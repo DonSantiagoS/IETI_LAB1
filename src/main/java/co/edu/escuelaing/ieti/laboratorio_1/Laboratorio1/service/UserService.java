@@ -13,6 +13,7 @@ package co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.service;
  **/
 
 
+import co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.dto.UserDto;
 import co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.entities.User;
 
 import java.util.List;
