@@ -34,8 +34,8 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserDto>> getAll() {
-        return ResponseEntity.ok(userService.getAll().toDto());
+    public ResponseEntity<List<User>> getAll() {
+        return ResponseEntity.ok(userService.getAll());
     }
 
     @GetMapping( "/{id}" )
@@ -49,12 +49,12 @@ public class UserController {
     }
 
     @PutMapping( "/{id}" )
-    public ResponseEntity<UserDto> update( @RequestBody UserDto user, @PathVariable String id ) {
-        return ResponseEntity.ok(userService.update(user, id));
+    public ResponseEntity<User> update( @RequestBody UserDto userDto, @PathVariable Integer id ) {
+        return ResponseEntity.ok(userService.update(userDto, id));
     }
 
     @DeleteMapping( "/{id}" )
     public ResponseEntity<Boolean> delete( @PathVariable String id ) {
-        return ResponseEntity.ok(userService.delete(id));
+        return ResponseEntity.ok(userService.deleteById(id));
     }
 }

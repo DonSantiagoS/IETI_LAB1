@@ -33,11 +33,6 @@ public class UserDto {
         this.createdAt=createdAt;
     }
 
-    public User toEntity(){
-        User user= new User(this.getClass());
-        return user;
-    }
-
     public Integer getId() {
         return id;
     }

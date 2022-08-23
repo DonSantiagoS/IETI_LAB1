@@ -17,14 +17,13 @@ import co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.dto.UserDto;
 import co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.entities.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface UserService {
 
     User create(UserDto userDto );
     User findById( String id );
     List<User> getAll();
-    void deleteById( String id );
-    User update( User user, String userId );
+    boolean deleteById(String id );
+    User update( UserDto user, Integer userId );
 
 }

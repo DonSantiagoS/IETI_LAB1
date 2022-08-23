@@ -30,17 +30,20 @@ public class UserServiceHashmap implements UserService {
 
     @Override
     public List<User> getAll() {
-        return (List<User>) HashMapUsers;
+        return (List<User>) HashMapUsers.values();
     }
 
     @Override
-    public void deleteById(String id) {
+    public boolean deleteById(String id) {
+
         HashMapUsers.remove(id);
+        return HashMapUsers.isEmpty();
     }
 
     @Override
-    public User update(User user, String userId) {
-        HashMapUsers[userId]=user;
-        return HashMapUsers[userId];
+    public User update(UserDto userDto, Integer userId) {
+        User user= new User(userDto);
+        HashMapUsers.put(userId,user);
+        return HashMapUsers.get(userId);
     }
 }
