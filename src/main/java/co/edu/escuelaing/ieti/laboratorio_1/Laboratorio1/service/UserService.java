@@ -24,6 +24,6 @@ public interface UserService {
     User findById( String id );
     List<User> getAll();
     boolean deleteById(String id );
-    User update( UserDto user, Integer userId );
+    User update( UserDto user, String userId );
 
 }

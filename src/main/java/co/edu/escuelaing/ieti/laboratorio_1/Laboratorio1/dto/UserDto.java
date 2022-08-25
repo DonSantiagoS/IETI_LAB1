@@ -14,26 +14,34 @@ package co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.dto;
  * @version 1.3 Final
  **/
 
-import org.apache.catalina.User;
+import co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.entities.User;
+
 import java.time.LocalDateTime;
 
 public class UserDto {
 
-    private Integer id;
+    private String id;
     private String name;
     private String lastName;
     private String email;
     private LocalDateTime createdAt;
 
-    public UserDto (Integer id, String name, String lasName, String email, LocalDateTime createdAt){
+    public UserDto (String id, String name, String lastName, String email, LocalDateTime createdAt){
         this.id=id;
         this.name=name;
         this.lastName=lastName;
         this.email=email;
         this.createdAt=createdAt;
     }
+    public UserDto (User user){
+        this.id= user.getId();
+        this.name= user.getName();
+        this.lastName= user.getLastName();
+        this.email= user.getEmail();
+        this.createdAt= user.getCreatedAt();
+    }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
     public String getName() {
@@ -50,5 +58,10 @@ public class UserDto {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public User toEntiti(){
+        User user= new User(this);
+        return user;
     }
 }

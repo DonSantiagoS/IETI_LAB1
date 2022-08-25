@@ -29,7 +29,7 @@ public class UserController {
 
     private UserService userService ;
 
-    public UserController(@Autowired UserService userServiceMySql) {
+    public UserController(@Autowired UserService userService) {
         this.userService = userService;
     }
 
@@ -49,7 +49,7 @@ public class UserController {
     }
 
     @PutMapping( "/{id}" )
-    public ResponseEntity<User> update( @RequestBody UserDto userDto, @PathVariable Integer id ) {
+    public ResponseEntity<User> update( @RequestBody UserDto userDto, @PathVariable String id ) {
         return ResponseEntity.ok(userService.update(userDto, id));
     }
 

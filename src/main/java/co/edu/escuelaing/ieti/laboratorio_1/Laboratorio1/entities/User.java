@@ -16,6 +16,7 @@ package co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.entities;
 
 import co.edu.escuelaing.ieti.laboratorio_1.Laboratorio1.dto.UserDto;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,22 +27,13 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer Id;
+    private String Id;
     private String name;
     private String lastName;
     private String email;
     private LocalDateTime createdAt;
 
 
-    public User(){}
-
-    public User(Integer Id, String name, String lastName, String email, LocalDateTime createdAt) {
-        Id=Id;
-        name=name;
-        lastName=lastName;
-        email=email;
-        createdAt=createdAt;
-    }
     public User(UserDto userDto) {
         Id= userDto.getId();
         name = userDto.getName();
@@ -50,17 +42,33 @@ public class User {
         createdAt= userDto.getCreatedAt();
     }
 
+    public User() {
+        
+    }
+
     public UserDto toDto(){
         UserDto userDto= new UserDto(Id, name, lastName, email, createdAt);
         return userDto;
     }
 
-    public Integer getId() {
+    @javax.persistence.Id
+    public String getId() {
         return Id;
     }
+    public String getName() {
+        return name;
+    }
 
-    public void setId(Integer id) {
-        this.Id = id;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
 }
